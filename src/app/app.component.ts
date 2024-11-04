@@ -9,10 +9,12 @@ import { DashboardComponentComponent } from './dashboard-component/dashboard-com
 import { RouterLink } from '@angular/router';
 import { MedicalInfoComponent } from "./medical-info/medical-info.component";
 import { MInfoComponent } from "./m-info/m-info.component";
+import { AngularFireModule } from '@angular/fire/compat';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, EmergencyContactComponent, DashboardComponentComponent, MedicalInfoComponent, MInfoComponent],
+  imports: [RouterOutlet, RouterLink, MatToolbarModule,
+     MatIconModule, MatButtonModule, MatMenuModule, EmergencyContactComponent, DashboardComponentComponent, MedicalInfoComponent, MInfoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

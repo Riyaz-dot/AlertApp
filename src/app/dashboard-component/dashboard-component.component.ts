@@ -7,7 +7,7 @@ import { LocationService } from '../services/location.service';
 import { CommonModule } from '@angular/common';
 import { MedicalInfoComponent } from "../medical-info/medical-info.component";
 import { MInfoComponent } from "../m-info/m-info.component";
-import twilio from 'twilio'; // Import Twilio
+// import twilio from 'twilio'; // Import Twilio
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -20,12 +20,12 @@ import { FormsModule } from '@angular/forms';
 export class DashboardComponentComponent {
   currentLocation: { latitude: number, longitude: number } | null = null;
   showDetails = false; // Initial state
-  private twilioClient: any; // Twilio client
+  // private twilioClient: any; // Twilio client
   phoneNumber: string = ''; 
 
   constructor(private locationService: LocationService) {
     // Initialize Twilio client with your credentials
-    this.twilioClient = twilio('ACe6d965c97753145d5431421be8a38372', 'fee714ce91efcb7e141301467649d0c7');
+    // this.twilioClient = twilio('ACe6d965c97753145d5431421be8a38372', 'fee714ce91efcb7e141301467649d0c7');
   }
 
   toggleDetails() {
@@ -54,18 +54,22 @@ export class DashboardComponentComponent {
   }
 
   // New method to share location details via SMS
-  shareLocation(phoneNumber: string) {
-    if (this.currentLocation) {
-      const message = `Current Location: Latitude ${this.currentLocation.latitude}, Longitude ${this.currentLocation.longitude}`;
-      this.twilioClient.messages.create({
-        body: message,
-        from: '7092346366', // Your Twilio phone number
-        to: phoneNumber // Recipient's phone number
-      })
-      .then((message: any) => console.log('Message sent:', message.sid))
-      .catch((error: any) => console.error('Error sending message:', error));
-    } else {
-      console.log('No location to share.');
-    }
+  // shareLocation(phoneNumber: string) {
+  //   if (this.currentLocation) {
+  //     const message = `Current Location: Latitude ${this.currentLocation.latitude}, Longitude ${this.currentLocation.longitude}`;
+  //     this.twilioClient.messages.create({
+  //       body: message,
+  //       from: '7092346366', // Your Twilio phone number
+  //       to: phoneNumber // Recipient's phone number
+  //     })
+  //     .then((message: any) => console.log('Message sent:', message.sid))
+  //     .catch((error: any) => console.error('Error sending message:', error));
+  //   } else {
+  //     console.log('No location to share.');
+  //   }
+  // }
+
+  testFunctio(){
+    console.log('testing success')
   }
 }

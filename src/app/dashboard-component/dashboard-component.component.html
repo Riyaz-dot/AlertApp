@@ -1,45 +1,44 @@
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <main>
-    <section class="welcome-section">
+  <section class="welcome-section">
       <h1>Welcome to Alert App!</h1>
       <p>Stay informed with the latest updates.</p>
-    </section>
+  </section>
 
-  
-    <!-- Existing Code Integration -->
-    <section class="dashboard-container" [routerLink]="['/alertcomponent']">
+  <!-- Dashboard Container -->
+  <section class="dashboard-container">
       <h2>Dashboard</h2>
-      
+
       <div class="button-group">
-        <button class="button info" [routerLink]="['/medicalinfo']">Medical Info</button>
-        <button class="button contacts" [routerLink]="['/M-info']">Urgent First Aid</button>
-        <button class="button contacts" [routerLink]="['/urgentdetails','thirdblock']">Alert Contacts</button>
-        <button class="button sos" [routerLink]="['/emergency']">Call Emergency</button>
+          <button class="button info" [routerLink]="['/medicalinfo']">Medical Info</button>
+          <button class="button contacts" [routerLink]="['/M-info']">Urgent First Aid</button>
+          <button class="button contacts" [routerLink]="['/urgentdetails','thirdblock']">Alert Contacts</button>
+          <button class="button sos" [routerLink]="['/emergency']">Call Emergency</button>
       </div>
 
       <div class="location-tracking">
-        <h3>Real-Time Location Tracking</h3>
-        <button (click)="startTracking()">Start Tracking</button>
-        <button (click)="stopTracking()">Stop Tracking</button>
-      
-        <div *ngIf="currentLocation">
-          <p>Latitude: {{ currentLocation.latitude }}</p>
-          <p>Longitude: {{ currentLocation.longitude }}</p>
-        </div>
+          <h3>Real-Time Location Tracking</h3>
+          <button (click)="startTracking()">Start Tracking</button>
+          <button (click)="stopTracking()">Stop Tracking</button>
+
+          <div *ngIf="currentLocation">
+              <p>Latitude: {{ currentLocation.latitude }}</p>
+              <p>Longitude: {{ currentLocation.longitude }}</p>
+          </div>
       </div>
-    </section>
-    <section class="alert-summary">
+  </section>
+
+  <!-- Alert Summary -->
+  <section class="alert-summary">
       <div class="summary-item">
-        <h2>Unread Alerts</h2>
-        <p>5</p>
+          <h2>Unread Alerts</h2>
+          <p>5</p>
       </div>
       <div class="summary-item">
-        <h2>Critical Updates</h2>
-        <p>3</p>
+          <h2>Critical Updates</h2>
+          <p>3</p>
       </div>
       <button class="view-alerts-btn">View All Alerts</button>
-    </section>
-
-  </main>
+  </section>
+</main>
