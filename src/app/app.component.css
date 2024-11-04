@@ -1,0 +1,107 @@
+
+
+.html{
+  scroll-behavior: smooth;
+
+}.app-container{
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}            
+
+.app-logo-text{
+    font-size: 20px;
+    font-weight: bold;  
+    color: #811f1f;
+    cursor: pointer;
+
+}
+
+
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button.back {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button.back:hover {
+  background-color: #0056b3;
+}
+
+:root {
+  /* YouTube's color palette */
+  --yt-background: #0f0f0f;
+  --yt-text: #ffffff;
+  --yt-red: #ff0000;
+  --yt-secondary: #272727;
+  --yt-hover: #272727;
+  --yt-border: #303030;
+}
+
+/* Main container */
+.app__container {
+  background-color: var(--yt-background);
+  color: var(--yt-text);
+}
+
+/* Header/Navbar */
+.header {
+  background-color: var(--yt-background);
+  border-bottom: 1px solid var(--yt-border);
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: var(--yt-background);
+}
+
+.sidebar__item:hover {
+  background-color: var(--yt-hover);
+}
+
+/* Main content area */
+.main__content {
+  background-color: var(--yt-background);
+}
+
+/* Buttons */
+.button {
+  background-color: var(--yt-secondary);
+  color: var(--yt-text);
+}
+
+.button--primary {
+  background-color: var(--yt-red);
+  color: var(--yt-text);
+}
+
+/* Cards/Containers */
+.card {
+  background-color: var(--yt-secondary);
+  border: 1px solid var(--yt-border);
+}
+
+/* Links */
+a {
+  color: var(--yt-text);
+}
+
+a:hover {
+  color: var(--yt-red);
+} 

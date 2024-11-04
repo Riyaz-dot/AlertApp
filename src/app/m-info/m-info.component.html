@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="card">
+    <h2>First Aid for: {{ firstAidMethods[currentMethodIndex].problem }}</h2>
+    <p>{{ firstAidMethods[currentMethodIndex].method }}</p>
+  </div>
+
+  <div class="card">
+      <h3>Symptoms</h3>
+      <p>{{ firstAidMethods[currentMethodIndex].symptoms }}</p>
+  </div>
+
+  <div class="card">
+      <h3>Warnings</h3>
+      <p>{{ firstAidMethods[currentMethodIndex].warnings }}</p>
+  </div>
+
+  <div class="card">
+      <h3>When to Seek Medical Help</h3>
+      <p>{{ firstAidMethods[currentMethodIndex].seekMedicalHelp }}</p>
+  </div>
+
+  <div class="navigation">
+    <button (click)="previousMethod()" [disabled]="currentMethodIndex === 0">Previous</button>
+    <button (click)="nextMethod()" [disabled]="currentMethodIndex === firstAidMethods.length - 1">Next</button>
+  </div>
+</div>

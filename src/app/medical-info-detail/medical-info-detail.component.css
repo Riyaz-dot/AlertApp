@@ -1,0 +1,42 @@
+.detail-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.info-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.info-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-details li {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-details li:last-child {
+  border-bottom: none;
+} 
