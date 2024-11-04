@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-medical-info',
   standalone: true,

@@ -7,7 +7,6 @@ import { LocationService } from '../services/location.service';
 import { CommonModule } from '@angular/common';
 import { MedicalInfoComponent } from "../medical-info/medical-info.component";
 import { MInfoComponent } from "../m-info/m-info.component";
-// import twilio from 'twilio'; // Import Twilio
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -20,7 +19,6 @@ import { FormsModule } from '@angular/forms';
 export class DashboardComponentComponent {
   currentLocation: { latitude: number, longitude: number } | null = null;
   showDetails = false; // Initial state
-  // private twilioClient: any; // Twilio client
   phoneNumber: string = ''; 
 
   constructor(private locationService: LocationService) {

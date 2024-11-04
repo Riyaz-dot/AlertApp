@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterModule, RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,14 +17,15 @@ import { environment } from '../environment';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, MatToolbarModule,
-     MatIconModule, MatButtonModule, MatMenuModule, EmergencyContactComponent, DashboardComponentComponent, MedicalInfoComponent, MInfoComponent],
+  imports: [RouterOutlet, RouterLink, RouterModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, EmergencyContactComponent, DashboardComponentComponent, MedicalInfoComponent, MInfoComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  providers: [MessagingService]
 })
 export class AppComponent {
   title = 'AlertApp';
   private messaging;
+  
   constructor(private messagingService: MessagingService){
     // Initialize Firebase
     const app = initializeApp(environment.firebase);

@@ -1,18 +1,18 @@
-
-
-// src/main.ts
 import { enableProdMode } from '@angular/core';
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app/app.component';
+import { RouterModule } from '@angular/router'; // Import RouterModule
+import { routes } from './app/app.routes'; // Import routes if defined in app.component.ts
 import { environment } from './environment';
-
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
 
 if (environment.production) {
   enableProdMode();
 }
+platformBrowserDynamic()
+  .bootstrapModule(AppComponent, {
+    providers: [{ provide: RouterModule, useValue: RouterModule.forRoot(routes).providers }] 
+  })
+  .catch(err => console.error(err));
 
 // Register the service worker
 if ('serviceWorker' in navigator) {
@@ -24,5 +24,3 @@ if ('serviceWorker' in navigator) {
       console.error('Service Worker registration failed:', error);
     });
 }
-
-bootstrapApplication(AppComponent).catch(err => console.error(err));
