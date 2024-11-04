@@ -6,8 +6,8 @@ import { MInfoComponent } from './m-info/m-info.component';
 import { MedicalInfoDetailComponent } from './medical-info-detail/medical-info-detail.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Redirect empty path to dashboard
-  { path: 'dashboard', component: DashboardComponentComponent },
+  // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Redirect empty path to dashboard
+  { path: 'dashboard', component: DashboardComponentComponent, pathMatch: 'full' },
   { path: 'emergency', component: EmergencyContactComponent },  
   { path: 'medicalinfo', component: MedicalInfoComponent }, 
   { path: 'M-info', component: MInfoComponent },
