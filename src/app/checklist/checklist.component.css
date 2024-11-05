@@ -1,0 +1,31 @@
+/* checklist.component.css */
+.checklist-container {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checklist li {
+    list-style: none;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+  }
+  
+  .checklist li:hover {
+    background: #e0f7fa;
+  }
+  
+  .checklist label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checklist input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  .checklist input[type="checkbox"]:checked {
+    accent-color: #007bff;
+  }
+  

@@ -1,0 +1,13 @@
+<!-- checklist.component.html -->
+<div class="checklist-container">
+    <h3>{{ emergencyType }} Preparation Checklist</h3>
+    <ul class="checklist">
+      <li *ngFor="let item of checklistItems">
+        <label>
+          <input type="checkbox" [(checked)]="item.isChecked" (change)="toggleItemChecked(item)">
+          {{ item.text }}
+        </label>
+      </li>
+    </ul>
+  </div>
+  

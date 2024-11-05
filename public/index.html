@@ -6,17 +6,17 @@
     <title>Welcome to Firebase Hosting</title>
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.0.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/{latest_version}/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.0.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.0.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.0.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.0.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.0.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.0.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.0.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.0.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.0.1/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/{latest_version}/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/{latest_version}/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/{latest_version}/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/{latest_version}/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/{latest_version}/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/{latest_version}/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/{latest_version}/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/{latest_version}/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/{latest_version}/firebase-performance-compat.js"></script>
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
@@ -54,15 +54,15 @@
         // // The Firebase SDK is initialized and available here!
         //
         // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
+        firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        firebase.firestore().doc('/foo/bar').get().then(() => { });
+        firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        firebase.messaging().requestPermission().then(() => { });
         // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
         // firebase.analytics(); // call to activate
         // firebase.analytics().logEvent('tutorial_completed');
         // firebase.performance(); // call to activate
-        //
+        
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
         try {

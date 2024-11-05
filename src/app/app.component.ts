@@ -13,11 +13,12 @@ import { MessagingService } from './messaging.service';
 import { getMessaging, getToken, onMessage } from 'firebase/messaging';
 import { initializeApp } from 'firebase/app';
 import { environment } from '../environment';
+import { ChecklistComponent } from "./checklist/checklist.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, EmergencyContactComponent, DashboardComponentComponent, MedicalInfoComponent, MInfoComponent],
+  imports: [RouterOutlet, RouterLink, RouterModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, EmergencyContactComponent, DashboardComponentComponent, MedicalInfoComponent, MInfoComponent, ChecklistComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [MessagingService]

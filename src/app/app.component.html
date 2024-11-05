@@ -1,20 +1,15 @@
- <mat-toolbar>
+<mat-toolbar class="app-toolbar">
   <div class="app-logo" [routerLink]="['/dashboard']">
-    <!-- <img src="assets/images/logo.png"  class="app-logo-image">
-    <img src="/assets/images/logo.png" alt="App Logo" class="app-logo-image"> -->
-    <span class="app-logo-text">🚨Alert App</span>
-    <button (click)="requestPermission()">Enable Notifications</button>
+    <!-- Logo image (uncomment if needed) -->
+    <!-- <img src="assets/images/logo.png" alt="App Logo" class="app-logo-image"> -->
+    <span class="app-logo-text">Life Saver</span>
   </div> 
-
-</mat-toolbar>  
-<!-- <app-emergency-contact></app-emergency-contact> -->
- <!-- <app-medical-info></app-medical-info> -->
-<!-- <div class="app-container"> -->
-  <router-outlet></router-outlet>
-<!-- </div> -->
-<!-- <app-m-info></app-m-info> -->
+  
+  <button mat-button color="primary" (click)="requestPermission()" class="notification-button">
+    Enable Notifications
+  </button>
+</mat-toolbar>
 
 
-<!-- <footer class="app-footer">
-  <button class="button back"  [routerLink]="['/dashboard']">Back</button>
-</footer> -->
+
+<router-outlet></router-outlet>

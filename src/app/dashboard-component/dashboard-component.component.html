@@ -1,44 +1,125 @@
-
-
-<main>
-  <section class="welcome-section">
-      <h1>Welcome to Alert App!</h1>
-      <p>Stay informed with the latest updates.</p>
-  </section>
-
-  <!-- Dashboard Container -->
-  <section class="dashboard-container">
-      <h2>Dashboard</h2>
-
-      <div class="button-group">
-          <button class="button info" [routerLink]="['/medicalinfo']">Medical Info</button>
-          <button class="button contacts" [routerLink]="['/M-info']">Urgent First Aid</button>
-          <button class="button contacts" [routerLink]="['/urgentdetails','thirdblock']">Alert Contacts</button>
-          <button class="button sos" [routerLink]="['/emergency']">Call Emergency</button>
-      </div>
-
-      <div class="location-tracking">
-          <h3>Real-Time Location Tracking</h3>
-          <button (click)="startTracking()">Start Tracking</button>
-          <button (click)="stopTracking()">Stop Tracking</button>
-
-          <div *ngIf="currentLocation">
-              <p>Latitude: {{ currentLocation.latitude }}</p>
-              <p>Longitude: {{ currentLocation.longitude }}</p>
+<main class="app-container">
+ 
+  <!-- Left Side: Information Section -->
+  <section class="left-container">
+    <div class="card welcome-card">
+      <div class="welcome-section">
+        <h2>Welcome to Your Safety Dashboard</h2>
+        <p>Your go-to for <strong>real-time alerts</strong> and <strong>emergency support</strong>.</p>
+        <p>Stay connected, stay safe, and get instant access to vital information when you need it most.</p>
+        <div class="features-overview">
+          <div class="feature-card">
+            <h3>📡 Live Alerts</h3>
+            <p>Get notified about important updates and warnings in your area.</p>
           </div>
+          <div class="feature-card">
+            <h3>🩺 Medical Info</h3>
+            <p>Quick access to your health details and emergency contacts.</p>
+          </div>
+          <div class="feature-card">
+            <h3>🆘 Emergency Support</h3>
+            <p>Reach out to the right help in seconds during an emergency.</p>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <div class="app-info-card">
+      <h3>App Information</h3>
+      <p>Access features like medical info, emergency contacts, and real-time tracking for your safety.</p>
+      <h4>Key Features:</h4>
+      <ul>
+        <li>Real-time alerts for emergencies.</li>
+        <li>Access to medical information quickly.</li>
+        <li>Contact emergency services with one tap.</li>
+        <li>Location tracking for emergency response.</li>
+      </ul>
+    </div>
+
+    <div class="tips-card">
+      <h3>Safety Tips</h3>
+      <p>Here are some essential safety tips:</p>
+      <ul>
+        <li>Always keep your emergency contacts updated.</li>
+        <li>Familiarize yourself with first aid procedures.</li>
+        <li>Ensure location services are enabled for accurate tracking.</li>
+      </ul>
+    </div>
+
+    <div class="resources-card">
+      <h3>Resources</h3>
+      <p>For more information, check out:</p>
+      <ul>
+        <li><a href="#" class="resource-link">Local Emergency Services</a></li>
+        <li><a href="#" class="resource-link">First Aid Guides</a></li>
+        <li><a href="#" class="resource-link">Health and Safety Regulations</a></li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Alert Summary -->
-  <section class="alert-summary">
-      <div class="summary-item">
-          <h2>Unread Alerts</h2>
-          <p>5</p>
+  <!-- Right Side: Action Section -->
+  <section class="right-container">
+    <h2>Quick Actions</h2>
+    <div class="card-container">
+      <div class="feature-column">
+        <div class="card small important">
+          <h3>Medical Info</h3>
+          <button class="button info" [routerLink]="['/medicalinfo']">View Medical Info</button>
+          <p class="note">Access your medical records here.</p>
+        </div>
+
+        <div class="card small medium">
+          <h3>Urgent First Aid</h3>
+          <button class="button first-aid" [routerLink]="['/M-info']">Get Help</button>
+          <p class="note">Quick first aid assistance.</p>
+        </div>
       </div>
-      <div class="summary-item">
-          <h2>Critical Updates</h2>
-          <p>3</p>
+
+      <div class="feature-column">
+        <div class="card small important">
+          <h3>Alert Contacts</h3>
+          <button class="button contacts" [routerLink]="['/urgentdetails', 'thirdblock']">Alert Contacts</button>
+          <p class="note">Your emergency contacts.</p>
+        </div>
+
+        <div class="card small urgent">
+          <h3>Call Emergency</h3>
+          <button class="button sos" [routerLink]="['/emergency']">Emergency Call</button>
+          <p class="note">Tap here for immediate assistance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Moved Checklist Section Here -->
+    <div class="checklist-section">
+      <app-checklist [emergencyType]="'Storm'"></app-checklist>
+      <app-checklist [emergencyType]="'Earthquake'"></app-checklist>
+    </div>
+
+    <div class="card small tracking-card">
+      <h3>Real-Time Location Tracking</h3>
+      <div class="tracking-buttons">
+        <button class="track-btn" (click)="startTracking()">Start Tracking</button>
+        <button class="track-btn" (click)="stopTracking()">Stop Tracking</button>
+      </div>
+      <div *ngIf="currentLocation" class="location-display">
+        <p>Latitude: {{ currentLocation.latitude }}</p>
+        <p>Longitude: {{ currentLocation.longitude }}</p>
+        <button class="share-btn" (click)="shareLocation()">Share Location on WhatsApp</button>
+      </div>
+    </div>
+
+    <section class="alert-summary">
+      <h2 class="section-title">Alert Summary</h2>
+      <div class="card summary-item small low">
+        <h3>Unread Alerts</h3>
+        <p>5</p>
+      </div>
+      <div class="card summary-item small medium">
+        <h3>Critical Updates</h3>
+        <p>3</p>
       </div>
       <button class="view-alerts-btn">View All Alerts</button>
+    </section>
   </section>
 </main>

@@ -2,21 +2,38 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
 }
 
 .container {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: white;
-    border-radius: 8px;
+    background: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 h1 {
     text-align: center;
     color: #333;
+}
+
+.info-section {
+    background-color: #e7f3fe;
+    border-left: 6px solid #2196F3;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.info-section h2 {
+    margin: 0;
+    color: #2196F3;
+}
+
+.info-section p {
+    margin: 5px 0;
 }
 
 .contact-list {
@@ -28,12 +45,11 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.contact-item:last-child {
-    border-bottom: none;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
 .contact-name {
@@ -42,15 +58,16 @@ h1 {
 }
 
 .call-button {
-    padding: 10px 15px;
-    background-color: #007BFF;
+    background-color: #2196F3;
     color: white;
     border: none;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
     transition: background-color 0.3s;
 }
 
 .call-button:hover {
-    background-color: #0056b3;
+    background-color: #1976D2;
 }

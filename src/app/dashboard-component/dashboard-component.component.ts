@@ -8,11 +8,12 @@ import { CommonModule } from '@angular/common';
 import { MedicalInfoComponent } from "../medical-info/medical-info.component";
 import { MInfoComponent } from "../m-info/m-info.component";
 import { FormsModule } from '@angular/forms';
+import { ChecklistComponent } from "../checklist/checklist.component";
 
 @Component({
   selector: 'app-dashboard-component',
   standalone: true,
-  imports: [RouterLink,FormsModule, CommonModule, AlertCompComponent, HttpClientModule, EmergencyContactComponent, MedicalInfoComponent, MInfoComponent],
+  imports: [RouterLink, FormsModule, CommonModule, AlertCompComponent, HttpClientModule, EmergencyContactComponent, MedicalInfoComponent, MInfoComponent, ChecklistComponent],
   templateUrl: './dashboard-component.component.html',
   styleUrls: ['./dashboard-component.component.css']
 })
@@ -51,20 +52,32 @@ export class DashboardComponentComponent {
     console.log('function is happening')
   }
 
-  // New method to share location details via SMS
-  // shareLocation(phoneNumber: string) {
+  // New method to share location details via WhatsApp
+  // shareLocation() {
   //   if (this.currentLocation) {
-  //     const message = `Current Location: Latitude ${this.currentLocation.latitude}, Longitude ${this.currentLocation.longitude}`;
-  //     this.twilioClient.messages.create({
-  //       body: message,
-  //       from: '7092346366', // Your Twilio phone number
-  //       to: phoneNumber // Recipient's phone number
-  //     })
-  //     .then((message: any) => console.log('Message sent:', message.sid))
-  //     .catch((error: any) => console.error('Error sending message:', error));
+  //     const message = `I'm currently at: Latitude: ${this.currentLocation.latitude}, Longitude: ${this.currentLocation.longitude}`;
+  //     const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+  //     window.open(whatsappUrl, '_blank');
   //   } else {
-  //     console.log('No location to share.');
+  //     console.error('Location is not available');
   //   }
+  // }
+  shareLocation() {
+    if (this.currentLocation) {
+      const message = `I'm currently at: Latitude: ${this.currentLocation.latitude}, Longitude: ${this.currentLocation.longitude}`;
+      // Add multiple phone numbers separated by commas
+      const phoneNumbers = '+919865288712'; // Replace with actual numbers
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumbers}&text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    } else {
+      console.error('Location is not available');
+    }
+  }
+   // Method to share location details via SMS
+  //  shareLocation() {
+  //   const message = `I'm currently at: Latitude: ${this.currentLocation?.latitude}, Longitude: ${this.currentLocation?.longitude}`; // Use optional chaining
+  //   const smsUrl = `sms:?body=${encodeURIComponent(message)}`;
+  //   window.open(smsUrl, '_blank');
   // }
 
   testFunctio(){

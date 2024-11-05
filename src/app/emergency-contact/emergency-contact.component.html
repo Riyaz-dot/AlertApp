@@ -9,18 +9,16 @@
 <body>
     <div class="container">
         <h1>Emergency Contacts</h1>
+        <div class="info-section">
+            <h2>Important Information</h2>
+            <p>In case of emergencies, please contact the relevant person immediately. Use the buttons below to call your emergency contacts.</p>
+            <p><strong>Warning:</strong> Always ensure you are safe before making a call.</p>
+            <p><strong>Note:</strong> Please use this feature only in emergency situations. Be respectful and aware that call information is visible, so avoid making unnecessary calls that could cause problems.</p>
+        </div>
         <ul class="contact-list">
-            <li class="contact-item">
-                <span class="contact-name">John Doe</span>
-                <button class="call-button">Call</button>
-            </li>
-            <li class="contact-item">
-                <span class="contact-name">Jane Smith</span>
-                <button class="call-button">Call</button>
-            </li>
-            <li class="contact-item">
-                <span class="contact-name">Emergency Services</span>
-                <button class="call-button">Call</button>
+            <li class="contact-item" *ngFor="let contact of contacts">
+                <span class="contact-name">{{ contact.name }}</span>
+                <button class="call-button" (click)="makeCall(contact.number)">Call</button>
             </li>
         </ul>
     </div>
